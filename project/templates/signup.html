@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <form action="/signup" method="post" >
+        <div class="mb-3">
+            <span>Sign Up</span>
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="username" placeholder="Username" type="text">
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" class="form-control mx-auto w-auto" name="password" placeholder="Password" type="password">
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" class="form-control mx-auto w-auto" name="confirmation" placeholder="Confirm Password" type="password">
+        </div>
+        <div class="mb-3">
+            <span style="color:red;">Note: If you forget your password, your account cannot be recovered</span>
+        </div>
+        <button class="btn btn-primary" type="submit">Sign Up</button>
+    </form>
+{% endblock %}
+

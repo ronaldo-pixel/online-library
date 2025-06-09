@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <style>
+        .lhs{
+            font-size: 1.2rem;
+            color: #0dcaf0;
+        }
+        .rhs{
+            font-size: 1.2rem
+        }
+    </style>
+    <div class="mb-3">
+        <span class="lhs"><b>File Name:  </b></span>
+        <span class="rhs">{{ file_name }}</span>
+    </div>
+    <div class="mb-3">
+        <span class="lhs"><b>Size:  </b></span>
+        <span class="rhs">{{ size }} MB</span>
+    </div>
+    <div class="mb-3">
+        <span class="lhs"><b>Upload Time:  </b></span>
+        <span class="rhs">{{ ut }}</span>
+    </div>
+    <div class="mb-3">
+        <span class="lhs"><b>Description:  </b></span>
+        <span class="rhs">{{ desc }}</span>
+    </div>
+    <div class="mb-3">
+        <a href="{{ url_for('delete', file_id=file_id) }}">
+            <button class="btn btn-danger">
+                Delete File
+            </button>
+        </a>
+    </div>
+{% endblock %}
