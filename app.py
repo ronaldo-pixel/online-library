@@ -20,6 +20,7 @@ db = SQL("sqlite:///main.db")
 
 upload_folder = "uploads/"
 
+app.run(host="0.0.0.0", port=5000)
 
 @app.route("/")
 def index():
