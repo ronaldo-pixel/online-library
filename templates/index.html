@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <form class="d-flex" method="GET" action="/" style="margin-bottom: 2rem;">
+        <input class="form-control me-2 mx-2" type="search" name="search" placeholder="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+    {% if file_names %}
+        <div class="mb-3">
+            <span style="color: green;">Note: Click on a file name to know more about it or to download it</span>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                <th>File Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in file_names %}
+                    <tr>
+                        <td>
+                            <a class="text-decoration-none text-dark" href="/downloader_file_view?file_id={{ i[2] }}">{{ i[1] }}</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="mb-3" >
+            <span><b>Page {{ page_no }} of {{ no_of_pages }}</b></span>
+        </div>
+        <form class="d-flex" method="GET" action="/">
+            <input type="hidden" name="search" value="{{ search }}">
+            <button class="btn btn-outline-success" type="submit">go to</button>
+            <input class="form-control mx-auto w-auto" type="search" name="page" placeholder="page number">
+        </form>
+    {% elif file_names == [] %}
+        <div class="mb-3" >
+            <span>Was not able to find anything similar to what you entered</span>
+        </div>
+    {% else %}
+        <div class="mb-3" >
+            <span>Search the files you want</span>
+        </div>
+    {% endif %}
+{% endblock %}
