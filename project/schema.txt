@@ -1,4 +1,0 @@
-CREATE TABLE users(id INTEGER PRIMARY KEY AUTOINCREMENT, username TEXT UNIQUE NOT NULL, password TEXT NOT NULL);
-CREATE UNIQUE INDEX id on users(id);
-CREATE UNIQUE INDEX username on users(username);
-CREATE TABLE filesinfo(uploader_id INTEGER, disk_name_id INTEGER PRIMARY KEY AUTOINCREMENT, original_name TEXT NOT NULL, description TEXT, size REAL NOT NULL, upload_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
